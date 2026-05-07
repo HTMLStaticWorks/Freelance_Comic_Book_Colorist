@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register | Colorist - Freelance Comic Book Colorist</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script>
+    // Inherit theme + RTL from localStorage on page load
+    const t = localStorage.getItem('theme') ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+
+    const d = localStorage.getItem('dir') || 'ltr';
+    if (d === 'rtl') document.documentElement.setAttribute('dir', 'rtl');
+  </script>
+</head>
+<body class="auth-page">
+  <div class="texture-halftone"></div>
+
+  <!-- Floating Toggles -->
+  <div class="auth-toggles">
+    <button class="icon-btn rtl-toggle" aria-label="Toggle RTL">
+      <i class="ph ph-arrows-left-right"></i>
+    </button>
+    <button class="icon-btn theme-toggle" aria-label="Toggle Theme">
+      <i class="ph ph-moon"></i>
+    </button>
+  </div>
+
+  <div class="auth-card">
+    <div class="auth-logo">
+      <img src="assets/images/logo.svg" alt="Colorist Logo">
+    </div>
+
+    <div class="auth-title">
+      <h2>JOIN THE PANEL</h2>
+    </div>
+
+    <form class="auth-form" id="registerForm">
+      <div class="form-success">Account created! Redirecting…</div>
+
+      <div class="form-group">
+        <label class="form-label" for="fullname">Full Name</label>
+        <input type="text" id="fullname" class="form-control" placeholder="Jack Kirby" required>
+        <div class="form-error-msg" id="nameError">Please enter your full name</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="email">Email Address</label>
+        <input type="email" id="email" class="form-control" placeholder="hero@example.com" required>
+        <div class="form-error-msg" id="emailError">Please enter a valid email</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="password">Password</label>
+        <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+        <div class="form-error-msg" id="passwordError">Password must be at least 8 characters</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" class="form-control" placeholder="••••••••" required>
+        <div class="form-error-msg" id="confirmError">Passwords do not match</div>
+      </div>
+
+      <label class="auth-terms">
+        <input type="checkbox" id="terms" required>
+        <span>I accept the <a href="#" style="color: var(--color-primary);">Terms & Conditions</a></span>
+      </label>
+      <div class="form-error-msg" id="termsError" style="margin-top: -12px; margin-bottom: 16px;">You must accept the Terms & Conditions</div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%;">REGISTER</button>
+    </form>
+
+    <div class="auth-divider">OR CONTINUE WITH</div>
+
+    <button class="btn btn-google btn-google">
+      <i class="ph ph-google-logo" style="margin-right: 8px;"></i> Continue with Google
+    </button>
+    <button class="btn btn-email-auth">
+      <i class="ph ph-envelope" style="margin-right: 8px;"></i> Continue with Email
+    </button>
+
+    <div class="auth-footer-link">
+      Already have an account? <a href="login.html">Login</a>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const fullname = document.getElementById('fullname');
+      const email = document.getElementById('email');
+      const password = document.getElementById('password');
+      const confirm = document.getElementById('confirm-password');
+      const terms = document.getElementById('terms');
+      
+      const nameError = document.getElementById('nameError');
+      const emailError = document.getElementById('emailError');
+      const passwordError = document.getElementById('passwordError');
+      const confirmError = document.getElementById('confirmError');
+      const termsError = document.getElementById('termsError');
+      const successMsg = this.querySelector('.form-success');
+      
+      let isValid = true;
+
+      // Name validation
+      if (!fullname.value.trim() || fullname.value.trim().length < 2) {
+        fullname.classList.add('error');
+        nameError.style.display = 'block';
+        isValid = false;
+      } else {
+        fullname.classList.remove('error');
+        nameError.style.display = 'none';
+      }
+
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email.value.trim() || !emailRegex.test(email.value.trim())) {
+        email.classList.add('error');
+        emailError.style.display = 'block';
+        isValid = false;
+      } else {
+        email.classList.remove('error');
+        emailError.style.display = 'none';
+      }
+
+      // Password validation
+      if (!password.value.trim() || password.value.length < 8) {
+        password.classList.add('error');
+        passwordError.style.display = 'block';
+        isValid = false;
+      } else {
+        password.classList.remove('error');
+        passwordError.style.display = 'none';
+      }
+
+      // Confirm password
+      if (confirm.value !== password.value) {
+        confirm.classList.add('error');
+        confirmError.style.display = 'block';
+        isValid = false;
+      } else {
+        confirm.classList.remove('error');
+        confirmError.style.display = 'none';
+      }
+
+      // Terms
+      if (!terms.checked) {
+        termsError.style.display = 'block';
+        isValid = false;
+      } else {
+        termsError.style.display = 'none';
+      }
+
+      if (isValid) {
+        successMsg.style.display = 'block';
+        setTimeout(() => {
+          window.location.href = 'login.html';
+        }, 1500);
+      }
+    });
+  </script>
+</body>
+</html>

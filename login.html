@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Colorist - Freelance Comic Book Colorist</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script>
+    // Inherit theme + RTL from localStorage on page load
+    const t = localStorage.getItem('theme') ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+
+    const d = localStorage.getItem('dir') || 'ltr';
+    if (d === 'rtl') document.documentElement.setAttribute('dir', 'rtl');
+  </script>
+</head>
+<body class="auth-page">
+  <div class="texture-halftone"></div>
+
+  <!-- Floating Toggles -->
+  <div class="auth-toggles">
+    <button class="icon-btn rtl-toggle" aria-label="Toggle RTL">
+      <i class="ph ph-arrows-left-right"></i>
+    </button>
+    <button class="icon-btn theme-toggle" aria-label="Toggle Theme">
+      <i class="ph ph-moon"></i>
+    </button>
+  </div>
+
+  <div class="auth-card">
+    <div class="auth-logo">
+      <img src="assets/images/logo.svg" alt="Colorist Logo">
+    </div>
+
+    <div class="auth-title">
+      <h2>ACCESS YOUR PANEL</h2>
+    </div>
+
+    <form class="auth-form" id="loginForm">
+      <div class="form-success">Logging you in…</div>
+
+      <div class="form-group">
+        <label class="form-label" for="email">Email Address</label>
+        <input type="email" id="email" class="form-control" placeholder="hero@example.com" required>
+        <div class="form-error-msg" id="emailError">Please enter a valid email</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="password">Password</label>
+        <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+        <div class="form-error-msg" id="passwordError">Password must be at least 8 characters</div>
+      </div>
+
+      <div class="auth-row">
+        <label class="auth-remember">
+          <input type="checkbox" id="remember">
+          <span>Remember Me</span>
+        </label>
+        <a href="#" class="auth-forgot">Forgot Password?</a>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%;">LOGIN</button>
+    </form>
+
+    <div class="auth-divider">OR CONTINUE WITH</div>
+
+    <button class="btn btn-google btn-google">
+      <i class="ph ph-google-logo" style="margin-right: 8px;"></i> Continue with Google
+    </button>
+    <button class="btn btn-email-auth">
+      <i class="ph ph-envelope" style="margin-right: 8px;"></i> Continue with Email
+    </button>
+
+    <div class="auth-footer-link">
+      New here? <a href="register.html">Create an Account</a>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email');
+      const password = document.getElementById('password');
+      const emailError = document.getElementById('emailError');
+      const passwordError = document.getElementById('passwordError');
+      const successMsg = this.querySelector('.form-success');
+      
+      let isValid = true;
+
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!email.value.trim()) {
+        email.classList.add('error');
+        emailError.textContent = "Please enter your email address";
+        emailError.style.display = 'block';
+        isValid = false;
+      } else if (!emailRegex.test(email.value.trim())) {
+        email.classList.add('error');
+        emailError.textContent = "Please enter a valid email";
+        emailError.style.display = 'block';
+        isValid = false;
+      } else {
+        email.classList.remove('error');
+        emailError.style.display = 'none';
+      }
+
+      // Password validation
+      if (!password.value.trim()) {
+        password.classList.add('error');
+        passwordError.textContent = "Please enter your password";
+        passwordError.style.display = 'block';
+        isValid = false;
+      } else if (password.value.length < 8) {
+        password.classList.add('error');
+        passwordError.textContent = "Password must be at least 8 characters";
+        passwordError.style.display = 'block';
+        isValid = false;
+      } else {
+        password.classList.remove('error');
+        passwordError.style.display = 'none';
+      }
+
+      if (isValid) {
+        successMsg.style.display = 'block';
+        setTimeout(() => {
+          window.location.href = 'dashboard.html';
+        }, 1500);
+      }
+    });
+  </script>
+</body>
+</html>

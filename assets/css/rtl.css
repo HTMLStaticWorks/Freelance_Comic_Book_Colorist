@@ -26,3 +26,14 @@ html[dir="rtl"] .section-heading h2 {
 html[dir="rtl"] .nav-logo {
   transform: rotate(3deg);
 }
+
+/* RTL — Auth floating toggle bar flips to top-left */
+html[dir="rtl"] .auth-toggles {
+  right: auto;
+  left: 16px;
+}
+
+/* RTL — Remember Me + Forgot Password row flips */
+html[dir="rtl"] .auth-row {
+  flex-direction: row-reverse;
+}
