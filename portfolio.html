@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorist - Portfolio</title>
+  <meta name="description" content="Portfolio of a professional freelance comic book colorist.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 40px;"></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="home2.html">Home 2</a>
+        <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="services.html">Services</a>
+        <a href="style-guide.html">Style Guide</a>
+        <a href="blog.html">Blog</a>
+              <a href="contact.html">Contact</a>
+      <a href="dashboard.html">Dashboard</a>
+      </nav>
+      <div class="nav-actions nav-actions-desktop">
+        <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+      </div>
+      <button class="icon-btn menu-toggle" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+    </div>
+  </header>
+
+  <div class="backdrop"></div>
+  <aside class="drawer">
+    <div class="drawer-header">
+      <span class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 40px;"></span>
+      <button class="icon-btn close-drawer" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="style-guide.html">Style Guide</a>
+      <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+    <div class="drawer-actions">
+      <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+      <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </aside>
+
+  <main>
+    <section class="container mt-8 animate-slide-up">
+      <div class="section-heading">
+        <h2>Portfolio Grid</h2>
+      </div>
+      
+      <div class="portfolio-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="superhero">Superhero</button>
+        <button class="filter-btn" data-filter="horror">Horror</button>
+        <button class="filter-btn" data-filter="scifi">Sci-Fi</button>
+      </div>
+
+      <div class="card-grid">
+        <!-- Item 1 -->
+        <div class="comic-card portfolio-item animate-slide-up" data-category="horror">
+          <div class="card-img-wrapper" style="position: relative;">
+            <a href="https://images.unsplash.com/photo-1601158935942-52255782d322?q=80&w=1200" class="lightbox-trigger" data-title="Midnight Terrors #4">
+              <img src="https://images.unsplash.com/photo-1601158935942-52255782d322?q=80&w=800" alt="Horror Comic">
+              <div style="position: absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); opacity:0; transition:0.3s; display:flex; align-items:center; justify-content:center;">
+                <i class="ph ph-magnifying-glass-plus" style="font-size: 3rem; color: #fff;"></i>
+              </div>
+            </a>
+          </div>
+          <h3 class="card-title">Midnight Terrors #4</h3>
+          <p class="card-desc">Client: Indie Press | <a href="portfolio-single.html" style="color:var(--color-primary); text-decoration:underline;">View Case Study</a></p>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="comic-card portfolio-item animate-slide-up" data-category="superhero" style="animation-delay: 0.1s">
+          <div class="card-img-wrapper">
+            <a href="https://images.unsplash.com/photo-1578305018684-25e22709e1bb?q=80&w=1200" class="lightbox-trigger" data-title="Captain Galaxy Cover">
+              <img src="https://images.unsplash.com/photo-1578305018684-25e22709e1bb?q=80&w=800" alt="Superhero Comic">
+            </a>
+          </div>
+          <h3 class="card-title">Captain Galaxy</h3>
+          <p class="card-desc">Client: Major Pub | <a href="portfolio-single.html" style="color:var(--color-primary); text-decoration:underline;">View Case Study</a></p>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="comic-card portfolio-item animate-slide-up" data-category="scifi" style="animation-delay: 0.2s">
+          <div class="card-img-wrapper">
+            <a href="https://images.unsplash.com/photo-1582152629442-4a864303fb96?q=80&w=1200" class="lightbox-trigger" data-title="Neon Drifters">
+              <img src="https://images.unsplash.com/photo-1582152629442-4a864303fb96?q=80&w=800" alt="Sci-Fi Comic">
+            </a>
+          </div>
+          <h3 class="card-title">Neon Drifters</h3>
+          <p class="card-desc">Client: Webtoon | <a href="portfolio-single.html" style="color:var(--color-primary); text-decoration:underline;">View Case Study</a></p>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="comic-card portfolio-item animate-slide-up" data-category="superhero" style="animation-delay: 0.3s">
+          <div class="card-img-wrapper">
+            <a href="https://images.unsplash.com/photo-1618519764620-7403abdbdf9e?q=80&w=1200" class="lightbox-trigger" data-title="Vanguard #1">
+              <img src="https://images.unsplash.com/photo-1618519764620-7403abdbdf9e?q=80&w=800" alt="Art">
+            </a>
+          </div>
+          <h3 class="card-title">Vanguard #1</h3>
+          <p class="card-desc">Client: Indie Press | <a href="portfolio-single.html" style="color:var(--color-primary); text-decoration:underline;">View Case Study</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4 class="nav-logo" style="margin: 0; transform: none;"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 40px;"></h4>
+        <p style="opacity: 0.8; margin-top: 8px;">Freelance sequential artist bringing ink to life through vibrant, dynamic colors.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul><li><a href="index.html">Home</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="services.html">Services</a></li><li><a href="blog.html">Blog</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul><li><a href="services.html">Full Issue Coloring</a></li><li><a href="services.html">Cover Art</a></li><li><a href="services.html">Character Guides</a></li><li><a href="services.html">Flatting</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div style="display: flex; gap: 16px; margin-bottom: 16px;">
+          <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo" style="font-size: 2rem;"></i></a>
+          <a href="#" aria-label="Twitter"><i class="ph ph-twitter-logo" style="font-size: 2rem;"></i></a>
+          <a href="#" aria-label="Behance"><i class="ph ph-behance-logo" style="font-size: 2rem;"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Colorist. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/portfolio.js"></script>
+</body>
+</html>

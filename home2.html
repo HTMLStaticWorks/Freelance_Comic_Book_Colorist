@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorist - Home Alternative</title>
+  <meta name="description" content="Portfolio of a professional freelance comic book colorist.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 40px;"></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="home2.html" class="active">Home 2</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="services.html">Services</a>
+        <a href="style-guide.html">Style Guide</a>
+        <a href="blog.html">Blog</a>
+              <a href="contact.html">Contact</a>
+      <a href="dashboard.html">Dashboard</a>
+      </nav>
+      <div class="nav-actions nav-actions-desktop">
+        <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+      </div>
+      <button class="icon-btn menu-toggle" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+    </div>
+  </header>
+
+  <div class="backdrop"></div>
+  <aside class="drawer">
+    <div class="drawer-header">
+      <span class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 40px;"></span>
+      <button class="icon-btn close-drawer" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="home2.html" class="active">Home 2</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="style-guide.html">Style Guide</a>
+      <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+    <div class="drawer-actions">
+      <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+      <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Hero 2 - Split Layout -->
+    <section class="hero-split" style="display: flex; min-height: 90vh; border-bottom: var(--border-ink);">
+      <div style="flex: 1; background-image: url('https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=1000'); background-size: cover; background-position: center; border-right: var(--border-ink);"></div>
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; padding: var(--spacing-10); background: var(--color-surface); position: relative;">
+        <div class="texture-halftone"></div>
+        <div class="animate-slide-up">
+          <div class="hero-subtitle">Visual Storytelling</div>
+          <h1 class="hero-title" style="font-size: 5rem; text-align: left; margin-bottom: var(--spacing-4);">COLOR<br>IS<br>EMOTION</h1>
+          <p style="font-size: 1.5rem; margin-bottom: var(--spacing-6); font-weight: 500;">Freelance Colorist & Flatting Services</p>
+          <a href="portfolio.html" class="btn">Explore Work</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services First -->
+    <section class="container mt-8">
+      <div class="section-heading animate-slide-up"><h2>What I Do</h2></div>
+      <div class="grid-2">
+        <div class="comic-card">
+          <h3 class="card-title">Full Coloring</h3>
+          <p class="card-desc text-center">Complete coloring packages for your sequential issues.</p>
+        </div>
+        <div class="comic-card">
+          <h3 class="card-title">Cover Art</h3>
+          <p class="card-desc text-center">High-impact colors for your covers and variant editions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Grid Snippet -->
+    <section class="container mt-8" style="background: var(--color-ink); padding: var(--spacing-8); border: var(--border-ink);">
+      <div class="section-heading"><h2 style="background: var(--color-secondary); color: #000;">Latest Panels</h2></div>
+      <div class="card-grid">
+        <div class="card-img-wrapper"><img src="https://images.unsplash.com/photo-1601158935942-52255782d322?q=80&w=800" alt="Work 1"></div>
+        <div class="card-img-wrapper"><img src="https://images.unsplash.com/photo-1578305018684-25e22709e1bb?q=80&w=800" alt="Work 2"></div>
+        <div class="card-img-wrapper"><img src="https://images.unsplash.com/photo-1582152629442-4a864303fb96?q=80&w=800" alt="Work 3"></div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="portfolio.html" class="btn">View Full Portfolio</a>
+      </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="container mt-8">
+      <div class="comic-card" style="border-radius: 40px; padding: var(--spacing-6); max-width: 800px; margin: 0 auto;">
+        <h2 style="text-align: center; margin-bottom: var(--spacing-4);">"The best colorist we've ever worked with. Truly elevates the art."</h2>
+        <p class="text-center" style="font-weight: bold; font-family: var(--font-heading); font-size: 1.5rem;">- Image Comics</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mt-8" style="background: var(--color-secondary); color: #000; text-align: center; border-top: var(--border-ink);">
+      <h2 style="font-size: 3rem; margin-bottom: var(--spacing-4);">Ready to Collaborate?</h2>
+      <a href="contact.html" class="btn btn-accent">Contact Me Now</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4 class="nav-logo" style="margin: 0; transform: none;"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 40px;"></h4>
+        <p style="opacity: 0.8; margin-top: 8px;">Freelance sequential artist bringing ink to life through vibrant, dynamic colors.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul><li><a href="index.html">Home</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="services.html">Services</a></li><li><a href="blog.html">Blog</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul><li><a href="services.html">Full Issue Coloring</a></li><li><a href="services.html">Cover Art</a></li><li><a href="services.html">Character Guides</a></li><li><a href="services.html">Flatting</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div style="display: flex; gap: 16px; margin-bottom: 16px;">
+          <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo" style="font-size: 2rem;"></i></a>
+          <a href="#" aria-label="Twitter"><i class="ph ph-twitter-logo" style="font-size: 2rem;"></i></a>
+          <a href="#" aria-label="Behance"><i class="ph ph-behance-logo" style="font-size: 2rem;"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Colorist. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

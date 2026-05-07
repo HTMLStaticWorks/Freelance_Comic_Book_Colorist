@@ -2,13 +2,292 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freelance Comic Book Colorist</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorist - Freelance Comic Book Colorist</title>
+  <meta name="description"
+    content="Portfolio of a professional freelance comic book colorist. Sequential art, cover art, and character design coloring services.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 
 <body>
-    <h1>Freelance Comic Book Colorist</h1>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo"
+          style="height: 40px;"></a>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="home2.html">Home 2</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="services.html">Services</a>
+        <a href="style-guide.html">Style Guide</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+      <div class="nav-actions nav-actions-desktop">
+        <button class="icon-btn theme-toggle" aria-label="Toggle Theme">
+          <i class="ph ph-moon"></i>
+        </button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL">
+          <i class="ph ph-arrows-left-right"></i>
+        </button>
+      </div>
+      <button class="icon-btn menu-toggle" aria-label="Open Menu">
+        <i class="ph ph-list"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Drawer -->
+  <div class="backdrop"></div>
+  <aside class="drawer">
+    <div class="drawer-header">
+      <span class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 40px;"></span>
+      <button class="icon-btn close-drawer" aria-label="Close Menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="style-guide.html">Style Guide</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+    <div class="drawer-actions">
+      <button class="icon-btn theme-toggle" aria-label="Toggle Theme">
+        <i class="ph ph-moon"></i>
+      </button>
+      <button class="icon-btn rtl-toggle" aria-label="Toggle RTL">
+        <i class="ph ph-arrows-left-right"></i>
+      </button>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero animate-panel-reveal"
+      style="background-image: url('assets/images/hero-bg.jpg'); background-size: cover; background-position: center;">
+      <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.45); z-index: 1;"></div>
+      <div class="texture-halftone"></div>
+      <div class="hero-content" style="position: relative; z-index: 2;">
+        <div class="hero-subtitle">Freelance Colorist</div>
+        <h1 class="hero-title">BRINGING INK TO LIFE</h1>
+        <div class="hero-actions mt-8">
+          <a href="portfolio.html" class="btn">View Portfolio</a>
+          <a href="contact.html" class="btn btn-secondary">Hire Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Work -->
+    <section class="container mt-8">
+      <div class="section-heading animate-slide-up">
+        <h2>Featured Work</h2>
+      </div>
+      <p class="section-subtext">Recent panels from my favorite sequential art projects.</p>
+
+      <div class="card-grid">
+        <div class="comic-card animate-slide-up">
+          <div class="card-img-wrapper">
+            <img src="assets/images/midnight-terrors.jpg" alt="Horror Comic">
+          </div>
+          <h3 class="card-title">Midnight Terrors</h3>
+          <p class="card-desc">Horror / Issue #4</p>
+        </div>
+
+        <div class="comic-card animate-slide-up" style="animation-delay: 0.2s">
+          <div class="card-img-wrapper">
+            <img src="assets/images/captain-galaxy.jpg" alt="Superhero Comic">
+          </div>
+          <h3 class="card-title">Captain Galaxy</h3>
+          <p class="card-desc">Superhero / Cover Art</p>
+        </div>
+
+        <div class="comic-card animate-slide-up" style="animation-delay: 0.4s">
+          <div class="card-img-wrapper">
+            <img src="assets/images/neon-drifters.jpg" alt="Sci-Fi Comic">
+          </div>
+          <h3 class="card-title">Neon Drifters</h3>
+          <p class="card-desc">Sci-Fi / Issue #12</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-8">
+        <a href="portfolio.html" class="btn btn-accent">See All Projects <i class="ph ph-arrow-right"
+            style="margin-left: 8px;"></i></a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="container mt-8"
+      style="background: var(--color-surface); border: var(--border-ink); box-shadow: var(--shadow-comic); padding: var(--spacing-6);">
+      <div class="grid-2" style="align-items: center;">
+        <div class="card-img-wrapper" style="margin-bottom: 0;">
+          <img src="assets/images/about-colorist.jpg" alt="Colorist at work">
+        </div>
+        <div>
+          <div class="section-heading"
+            style="justify-content: flex-start; left: 0; transform: none; margin-bottom: var(--spacing-4);">
+            <h2 style="transform: rotate(1deg);">The Origin Story</h2>
+          </div>
+          <p style="font-size: 1.2rem; margin-bottom: var(--spacing-4);">Every page has a pulse. My job is to find it.
+            I'm a professional comic book colorist specializing in bold, narrative-driven palettes that elevate the
+            lineart and guide the reader's eye.</p>
+          <p style="font-size: 1.2rem; margin-bottom: var(--spacing-4);">From atmospheric horror to vibrant superhero
+            splashes, I work closely with pencillers and editors to ensure the final product pops off the page.</p>
+          <a href="style-guide.html" class="btn btn-secondary">Read My Style Guide</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="container mt-8">
+      <div class="section-heading animate-slide-up">
+        <h2>My Services</h2>
+      </div>
+      <p class="section-subtext">Bringing your ink to the next level.</p>
+
+      <div class="card-grid">
+        <div class="comic-card">
+          <div
+            style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: var(--border-ink); box-shadow: var(--shadow-comic); margin-bottom: var(--spacing-2); flex-shrink: 0;">
+            <img src="assets/images/service-full-issue.jpg" alt="Full Issue Coloring"
+              style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h3 class="card-title">Full Issue Coloring</h3>
+          <p class="card-desc text-center">Consistent, high-quality coloring for your 20-24 page sequential art issues.
+            Delivered on time, every time.</p>
+        </div>
+
+        <div class="comic-card">
+          <div
+            style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: var(--border-ink); box-shadow: var(--shadow-comic); margin-bottom: var(--spacing-2); flex-shrink: 0;">
+            <img src="assets/images/service-cover-art.jpg" alt="Cover Art"
+              style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h3 class="card-title">Cover Art</h3>
+          <p class="card-desc text-center">Eye-catching, maximalist cover colors designed to stand out on the shelf and
+            grab the reader's attention.</p>
+        </div>
+
+        <div class="comic-card">
+          <div
+            style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; border: var(--border-ink); box-shadow: var(--shadow-comic); margin-bottom: var(--spacing-2); flex-shrink: 0;">
+            <img src="assets/images/service-flatting.jpg" alt="Flatting"
+              style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          <h3 class="card-title">Flatting</h3>
+          <p class="card-desc text-center">Clean, precise flatting services for other colorists to speed up their
+            workflow. Fast turnaround guaranteed.</p>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials -->
+    <!-- Testimonials -->
+    <section class="container mt-8" style="position: relative;">
+      <div class="texture-halftone"></div>
+      <div class="section-heading animate-slide-up">
+        <h2>Words from the Ink</h2>
+      </div>
+
+      <div class="grid-2">
+        <div class="comic-card"
+          style="border-radius: 20px; border-bottom-left-radius: 0; text-align: center; align-items: center;">
+          <p style="font-size: 1.4rem; font-style: italic; margin-bottom: var(--spacing-4);">"The colors added a
+            completely new dimension to my lineart. The atmospheric shading perfectly captured the mood!"
+          </p>
+          <div style="display: flex; align-items: center; gap: var(--spacing-2); justify-content: center;">
+            <div
+              style="width: 50px; height: 50px; border-radius: 50%; background: var(--color-ink); overflow: hidden; flex-shrink: 0;">
+              <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=200" alt="Client"
+                style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="text-align: left;">
+              <h4 style="font-size: 1.2rem; margin: 0;">Jack K.</h4>
+              <p style="font-size: 0.9rem; margin: 0; opacity: 0.8;">Indie Publisher</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="comic-card"
+          style="border-radius: 20px; border-bottom-right-radius: 0; text-align: center; align-items: center;">
+          <p style="font-size: 1.4rem; font-style: italic; margin-bottom: var(--spacing-4);">"Fast, professional, and an
+            incredible eye for color theory. We trust them with all of our flagship titles without hesitation."</p>
+          <div style="display: flex; align-items: center; gap: var(--spacing-2); justify-content: center;">
+            <div
+              style="width: 50px; height: 50px; border-radius: 50%; background: var(--color-ink); overflow: hidden; flex-shrink: 0;">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200" alt="Client"
+                style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="text-align: left;">
+              <h4 style="font-size: 1.2rem; margin: 0;">Sarah W.</h4>
+              <p style="font-size: 0.9rem; margin: 0; opacity: 0.8;">Art Director</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mt-8"
+      style="background: var(--color-primary); color: #fff; text-align: center; border-top: var(--border-ink); border-bottom: var(--border-ink);">
+      <h2 style="font-size: 4rem; text-shadow: 4px 4px 0px var(--color-ink); margin-bottom: var(--spacing-4);">LET'S
+        COLOR YOUR STORY</h2>
+      <a href="contact.html" class="btn btn-secondary" style="font-size: 2rem;">Get in Touch</a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4 class="nav-logo" style="margin: 0; transform: none;"><img src="assets/images/logo.svg" alt="Colorist Logo"
+            style="height: 40px;"></h4>
+        <p style="opacity: 0.8; margin-top: 8px;">Freelance sequential artist bringing ink to life through vibrant,
+          dynamic colors.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Full Issue Coloring</a></li>
+          <li><a href="services.html">Cover Art</a></li>
+          <li><a href="services.html">Character Guides</a></li>
+          <li><a href="services.html">Flatting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div style="display: flex; gap: 16px; margin-bottom: 16px;">
+          <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo" style="font-size: 2rem;"></i></a>
+          <a href="#" aria-label="Twitter"><i class="ph ph-twitter-logo" style="font-size: 2rem;"></i></a>
+          <a href="#" aria-label="Behance"><i class="ph ph-behance-logo" style="font-size: 2rem;"></i></a>
+        </div>
+        <p style="opacity: 0.8;">Available for new projects</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Colorist. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>

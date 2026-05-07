@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorist - Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="dashboard-layout">
+
+  <!-- Sidebar -->
+  <div class="backdrop dash-backdrop"></div>
+  <aside class="dashboard-sidebar">
+    <div class="dashboard-header">
+      <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 40px; margin: 0 auto;"></a>
+    </div>
+    <nav class="dashboard-nav">
+      <a href="dashboard.html" class="active"><i class="ph ph-squares-four"></i> Overview</a>
+      <a href="dashboard-project.html"><i class="ph ph-folder-open"></i> My Projects</a>
+      <a href="dashboard-palette.html"><i class="ph ph-palette"></i> Palette Approvals</a>
+      <a href="dashboard-downloads.html"><i class="ph ph-download-simple"></i> Downloads</a>
+    </nav>
+    <div class="dashboard-nav-actions">
+      <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+      <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="dashboard-main">
+    <div class="dash-topbar">
+      <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 32px;"></a>
+      <button class="icon-btn dash-menu-toggle" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+    </div>
+
+    <div class="dashboard-content">
+      
+      <!-- Welcome Banner -->
+      <div class="dash-welcome">
+        <h2>Welcome back, Invincible Comics!</h2>
+        <p>October 24, 2024 &mdash; You have <strong>3 pages</strong> awaiting your review.</p>
+      </div>
+
+      <!-- KPIs -->
+      <div class="dash-kpi-grid">
+        <div class="dash-kpi-card ink">
+          <div class="dash-kpi-num">142</div>
+          <div class="dash-kpi-label"><i class="ph ph-files"></i> Pages Submitted</div>
+        </div>
+        <div class="dash-kpi-card accent">
+          <div class="dash-kpi-num">8</div>
+          <div class="dash-kpi-label"><i class="ph ph-paint-brush"></i> In Progress</div>
+        </div>
+        <div class="dash-kpi-card secondary">
+          <div class="dash-kpi-num">24</div>
+          <div class="dash-kpi-label"><i class="ph ph-check-circle"></i> Approved</div>
+        </div>
+        <div class="dash-kpi-card" style="border-top-color: #69f0ae;">
+          <div class="dash-kpi-num">2</div>
+          <div class="dash-kpi-label"><i class="ph ph-file-zip"></i> Ready to Download</div>
+        </div>
+      </div>
+
+      <!-- Active Projects Table -->
+      <h3 class="dash-section-title">Active Projects</h3>
+      <div class="dash-table-wrapper">
+        <table class="dash-table">
+          <thead>
+            <tr>
+              <th>Project Name</th>
+              <th>Issue #</th>
+              <th>Total Pages</th>
+              <th>Pages Done</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Midnight Terrors</strong></td>
+              <td>#4</td>
+              <td>24</td>
+              <td>18</td>
+              <td><span class="status-badge coloring">Coloring</span></td>
+              <td><a href="dashboard-project.html" class="btn btn-secondary" style="font-size:1rem; padding: 4px 12px;">View</a></td>
+            </tr>
+            <tr>
+              <td><strong>Neon Drifters</strong></td>
+              <td>#12</td>
+              <td>22</td>
+              <td>22</td>
+              <td><span class="status-badge approved">Approved</span></td>
+              <td><a href="dashboard-project.html" class="btn btn-secondary" style="font-size:1rem; padding: 4px 12px;">View</a></td>
+            </tr>
+            <tr>
+              <td><strong>Captain Galaxy</strong></td>
+              <td>Cover</td>
+              <td>1</td>
+              <td>0</td>
+              <td><span class="status-badge review">Review</span></td>
+              <td><a href="dashboard-project.html" class="btn btn-secondary" style="font-size:1rem; padding: 4px 12px;">View</a></td>
+            </tr>
+            <tr>
+              <td><strong>Vanguard</strong></td>
+              <td>#1</td>
+              <td>20</td>
+              <td>0</td>
+              <td><span class="status-badge flatting">Flatting</span></td>
+              <td><a href="dashboard-project.html" class="btn btn-secondary" style="font-size:1rem; padding: 4px 12px;">View</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Activity Feed -->
+      <h3 class="dash-section-title">Recent Activity</h3>
+      <div class="dash-timeline">
+        <div class="dash-timeline-item">
+          <i class="ph ph-check-circle" style="color: #69f0ae; font-size: 1.5rem;"></i>
+          <div>
+            <strong>Page 12 of Midnight Terrors #4 marked APPROVED</strong>
+            <div style="opacity: 0.7; font-size: 0.9rem;">2 hours ago</div>
+          </div>
+        </div>
+        <div class="dash-timeline-item">
+          <i class="ph ph-palette" style="color: #ffd54f; font-size: 1.5rem;"></i>
+          <div>
+            <strong>Palette for Vanguard #1 uploaded for review</strong>
+            <div style="opacity: 0.7; font-size: 0.9rem;">Yesterday</div>
+          </div>
+        </div>
+        <div class="dash-timeline-item">
+          <i class="ph ph-download-simple" style="color: var(--color-primary); font-size: 1.5rem;"></i>
+          <div>
+            <strong>Print-ready files for Neon Drifters available</strong>
+            <div style="opacity: 0.7; font-size: 0.9rem;">Oct 22, 2024</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

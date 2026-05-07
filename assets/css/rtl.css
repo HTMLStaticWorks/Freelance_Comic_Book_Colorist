@@ -1,0 +1,28 @@
+/* RTL Overrides */
+html[dir="rtl"] {
+  direction: rtl;
+}
+
+html[dir="rtl"] .drawer {
+  right: auto;
+  left: -100%;
+  border-left: none;
+  border-right: var(--border-ink);
+}
+
+html[dir="rtl"] .drawer.open {
+  left: 0;
+  right: auto;
+}
+
+html[dir="rtl"] .hero-subtitle {
+  transform: rotate(-2deg);
+}
+
+html[dir="rtl"] .section-heading h2 {
+  transform: rotate(2deg);
+}
+
+html[dir="rtl"] .nav-logo {
+  transform: rotate(3deg);
+}

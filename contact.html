@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorist - Contact</title>
+  <meta name="description" content="Get in touch to hire me for your next comic book coloring project.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    /* Specific overrides for 360px mobile view to ensure no overflow */
+    @media (max-width: 360px) {
+      body, html { overflow-x: hidden; }
+      .container { padding-left: 16px; padding-right: 16px; width: 100%; box-sizing: border-box; }
+      .comic-card { padding: 16px; }
+      .btn { width: 100%; text-align: center; }
+      .hero-title { font-size: 2.5rem; word-wrap: break-word; }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 40px;"></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="home2.html">Home 2</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="services.html">Services</a>
+        <a href="style-guide.html">Style Guide</a>
+        <a href="blog.html">Blog</a>
+              <a href="contact.html" class="active">Contact</a>
+      <a href="dashboard.html">Dashboard</a>
+      </nav>
+      <div class="nav-actions nav-actions-desktop">
+        <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+      </div>
+      <button class="icon-btn menu-toggle" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+    </div>
+  </header>
+
+  <div class="backdrop"></div>
+  <aside class="drawer">
+    <div class="drawer-header">
+      <span class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 40px;"></span>
+      <button class="icon-btn close-drawer" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="style-guide.html">Style Guide</a>
+      <a href="blog.html">Blog</a>
+            <a href="contact.html" class="active">Contact</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+    <div class="drawer-actions">
+      <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+      <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </aside>
+
+  <main>
+    <section class="container mt-8 animate-slide-up" style="max-width: 1000px;">
+      <div class="section-heading">
+        <h2>Hire Me</h2>
+      </div>
+      <p class="section-subtext">Currently accepting new clients for Fall 2025.</p>
+
+      <div class="grid-2 mt-8">
+        <!-- Contact Form -->
+        <div class="comic-card" style="align-items: stretch; text-align: left;">
+          <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: var(--spacing-4);">Project Inquiry</h3>
+          
+          <form class="validate-form" action="https://formspree.io/f/placeholder" method="POST" novalidate>
+            <div class="form-success">Message sent successfully! I will reply within 48 hours.</div>
+            
+            <div class="form-group">
+              <label class="form-label" for="name">Your Name *</label>
+              <input type="text" id="name" name="name" class="form-control" required placeholder="Jack Kirby">
+              <span class="form-error-msg">Please enter your name.</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address *</label>
+              <input type="email" id="email" name="email" class="form-control" required placeholder="jack@example.com">
+              <span class="form-error-msg">Please enter a valid email address.</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="project_type">Project Type *</label>
+              <select id="project_type" name="project_type" class="form-control" required style="appearance: none;">
+                <option value="" disabled selected>Select a type...</option>
+                <option value="Issue">Full Issue</option>
+                <option value="Cover">Cover Art</option>
+                <option value="Guide">Character Guide</option>
+                <option value="Other">Other / General</option>
+              </select>
+              <span class="form-error-msg">Please select a project type.</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Message * (Min 20 chars)</label>
+              <textarea id="message" name="message" class="form-control" required rows="5" placeholder="Tell me about your comic..."></textarea>
+              <span class="form-error-msg">Message must be at least 20 characters long.</span>
+            </div>
+
+            <button type="submit" class="btn" style="width: 100%;">Send Transmission</button>
+          </form>
+        </div>
+
+        <!-- Contact Info & Map -->
+        <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
+          <div class="comic-card" style="background: var(--color-ink); color: var(--color-bg);">
+            <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: var(--spacing-2); color: var(--color-primary);">Status</h3>
+            <p style="font-size: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
+              <i class="ph ph-check-circle" style="color: #00e676;"></i> Currently accepting new clients
+            </p>
+            <p style="margin-top: var(--spacing-2);">Email directly: <br><strong>hello@colorist.com</strong></p>
+          </div>
+
+          <!-- Map Placeholder -->
+          <div class="comic-card" style="padding: 0; overflow: hidden; height: 250px;">
+            <div style="width: 100%; height: 100%; background: #e0e0e0 url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=800') center/cover; position: relative;">
+              <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center;">
+                <span style="background: var(--color-primary); color: #fff; padding: 4px 12px; font-weight: bold; border: 2px solid #000; box-shadow: 4px 4px 0px #000;">New York Studio</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4 class="nav-logo" style="margin: 0; transform: none;"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 40px;"></h4>
+        <p style="opacity: 0.8; margin-top: 8px;">Freelance sequential artist bringing ink to life through vibrant, dynamic colors.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul><li><a href="index.html">Home</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="services.html">Services</a></li><li><a href="blog.html">Blog</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul><li><a href="services.html">Full Issue Coloring</a></li><li><a href="services.html">Cover Art</a></li><li><a href="services.html">Character Guides</a></li><li><a href="services.html">Flatting</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div style="display: flex; gap: 16px; margin-bottom: 16px;">
+          <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo" style="font-size: 2rem;"></i></a>
+          <a href="#" aria-label="Twitter"><i class="ph ph-twitter-logo" style="font-size: 2rem;"></i></a>
+          <a href="#" aria-label="Behance"><i class="ph ph-behance-logo" style="font-size: 2rem;"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Colorist. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorist - Blog</title>
+  <meta name="description" content="Comic book coloring tutorials, industry insights, and behind the scenes.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 40px;"></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="home2.html">Home 2</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="services.html">Services</a>
+        <a href="style-guide.html">Style Guide</a>
+        <a href="blog.html" class="active">Blog</a>
+              <a href="contact.html">Contact</a>
+      <a href="dashboard.html">Dashboard</a>
+      </nav>
+      <div class="nav-actions nav-actions-desktop">
+        <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+      </div>
+      <button class="icon-btn menu-toggle" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+    </div>
+  </header>
+
+  <div class="backdrop"></div>
+  <aside class="drawer">
+    <div class="drawer-header">
+      <span class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 40px;"></span>
+      <button class="icon-btn close-drawer" aria-label="Close Menu"><i class="ph ph-x"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="services.html">Services</a>
+      <a href="style-guide.html">Style Guide</a>
+      <a href="blog.html" class="active">Blog</a>
+            <a href="contact.html">Contact</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+    <div class="drawer-actions">
+      <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+      <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </aside>
+
+  <main>
+    <section class="container mt-8 animate-slide-up">
+      <div class="section-heading">
+        <h2>From the Desk</h2>
+      </div>
+      <p class="section-subtext">Tutorials, industry talk, and behind the scenes of coloring comics.</p>
+
+      <div class="card-grid mt-8">
+        <!-- Post 1 -->
+        <article class="comic-card" style="align-items: flex-start; text-align: left;">
+          <div class="card-img-wrapper" style="aspect-ratio: 16/9;">
+            <a href="blog-single.html">
+              <img src="https://images.unsplash.com/photo-1601158935942-52255782d322?q=80&w=800" alt="Horror Pages">
+            </a>
+          </div>
+          <div style="display: flex; gap: 8px; margin-bottom: var(--spacing-2);">
+            <span style="background: var(--color-primary); color: #fff; padding: 2px 8px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">Tutorials</span>
+            <span style="opacity: 0.6; font-size: 0.9rem;">Oct 12, 2024 • 5 min read</span>
+          </div>
+          <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: var(--spacing-2);"><a href="blog-single.html">How I Color Horror Pages</a></h3>
+          <p style="opacity: 0.8; margin-bottom: var(--spacing-4);">Discover the specific color palettes and techniques I use to build tension and atmosphere in horror comics.</p>
+          <a href="blog-single.html" style="color: var(--color-primary); font-weight: bold; text-decoration: underline;">Read More</a>
+        </article>
+
+        <!-- Post 2 -->
+        <article class="comic-card" style="align-items: flex-start; text-align: left;">
+          <div class="card-img-wrapper" style="aspect-ratio: 16/9;">
+            <a href="blog-single.html">
+              <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=800" alt="Workflow">
+            </a>
+          </div>
+          <div style="display: flex; gap: 8px; margin-bottom: var(--spacing-2);">
+            <span style="background: var(--color-secondary); color: #000; padding: 2px 8px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">Behind the Scenes</span>
+            <span style="opacity: 0.6; font-size: 0.9rem;">Sep 28, 2024 • 4 min read</span>
+          </div>
+          <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: var(--spacing-2);"><a href="blog-single.html">My Flatting Workflow</a></h3>
+          <p style="opacity: 0.8; margin-bottom: var(--spacing-4);">Flatting is the foundation of coloring. Here is how I set up my Photoshop workspace for maximum efficiency.</p>
+          <a href="blog-single.html" style="color: var(--color-primary); font-weight: bold; text-decoration: underline;">Read More</a>
+        </article>
+
+        <!-- Post 3 -->
+        <article class="comic-card" style="align-items: flex-start; text-align: left;">
+          <div class="card-img-wrapper" style="aspect-ratio: 16/9;">
+            <a href="blog-single.html">
+              <img src="https://images.unsplash.com/photo-1578305018684-25e22709e1bb?q=80&w=800" alt="Indie Publishers">
+            </a>
+          </div>
+          <div style="display: flex; gap: 8px; margin-bottom: var(--spacing-2);">
+            <span style="background: var(--color-accent); color: #000; padding: 2px 8px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">Industry</span>
+            <span style="opacity: 0.6; font-size: 0.9rem;">Sep 15, 2024 • 7 min read</span>
+          </div>
+          <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: var(--spacing-2);"><a href="blog-single.html">Working with Indie Publishers</a></h3>
+          <p style="opacity: 0.8; margin-bottom: var(--spacing-4);">Everything you need to know about rates, contracts, and communication when coloring for indie titles.</p>
+          <a href="blog-single.html" style="color: var(--color-primary); font-weight: bold; text-decoration: underline;">Read More</a>
+        </article>
+      </div>
+
+      <div class="text-center mt-8">
+        <button class="btn btn-secondary">Load More Posts</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4 class="nav-logo" style="margin: 0; transform: none;"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 40px;"></h4>
+        <p style="opacity: 0.8; margin-top: 8px;">Freelance sequential artist bringing ink to life through vibrant, dynamic colors.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul><li><a href="index.html">Home</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="services.html">Services</a></li><li><a href="blog.html">Blog</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul><li><a href="services.html">Full Issue Coloring</a></li><li><a href="services.html">Cover Art</a></li><li><a href="services.html">Character Guides</a></li><li><a href="services.html">Flatting</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div style="display: flex; gap: 16px; margin-bottom: 16px;">
+          <a href="#" aria-label="Instagram"><i class="ph ph-instagram-logo" style="font-size: 2rem;"></i></a>
+          <a href="#" aria-label="Twitter"><i class="ph ph-twitter-logo" style="font-size: 2rem;"></i></a>
+          <a href="#" aria-label="Behance"><i class="ph ph-behance-logo" style="font-size: 2rem;"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Colorist. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

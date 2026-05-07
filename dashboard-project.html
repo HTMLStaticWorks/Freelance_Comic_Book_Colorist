@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorist - Project Detail</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="dashboard-layout">
+
+  <!-- Sidebar -->
+  <div class="backdrop dash-backdrop"></div>
+  <aside class="dashboard-sidebar">
+    <div class="dashboard-header">
+      <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 40px; margin: 0 auto;"></a>
+    </div>
+    <nav class="dashboard-nav">
+      <a href="dashboard.html"><i class="ph ph-squares-four"></i> Overview</a>
+      <a href="dashboard-project.html" class="active"><i class="ph ph-folder-open"></i> My Projects</a>
+      <a href="dashboard-palette.html"><i class="ph ph-palette"></i> Palette Approvals</a>
+      <a href="dashboard-downloads.html"><i class="ph ph-download-simple"></i> Downloads</a>
+    </nav>
+    <div class="dashboard-nav-actions">
+      <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+      <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="dashboard-main">
+    <div class="dash-topbar">
+      <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 32px;"></a>
+      <button class="icon-btn dash-menu-toggle" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+    </div>
+
+    <div class="dashboard-content">
+      
+      <!-- Project Header -->
+      <div style="margin-bottom: var(--spacing-6);">
+        <span class="status-badge flatting" style="margin-bottom: 8px;">Horror</span>
+        <h2 class="dash-issue-header">MIDNIGHT TERRORS #4</h2>
+        <div style="display: flex; gap: 24px; font-size: 1.2rem; opacity: 0.8; flex-wrap: wrap;">
+          <span><strong>Client:</strong> Invincible Comics</span>
+          <span><strong>Total Pages:</strong> 24</span>
+          <span><strong>Deadline:</strong> Nov 15, 2024</span>
+        </div>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="dash-progress-wrapper">
+        <div class="dash-progress-bar">
+          <div class="dash-progress-fill" style="width: 75%;"></div>
+          <div class="dash-progress-label">18 of 24 pages colored</div>
+        </div>
+      </div>
+
+      <h3 class="dash-section-title">Upload Inked Pages</h3>
+      <div class="dash-upload-zone" id="uploadZone">
+        <i class="ph ph-upload-simple" style="font-size: 3rem; color: var(--color-primary); margin-bottom: 16px;"></i>
+        <h4 style="font-family: var(--font-heading); font-size: 1.5rem;">Drop inked pages here or click to browse</h4>
+        <p style="opacity: 0.7;">Supports TIFF, PSD, or High-Res JPG/PNG</p>
+        <input type="file" id="fileInput" multiple style="display: none;">
+      </div>
+      
+      <!-- Dummy Upload List -->
+      <div style="margin-bottom: var(--spacing-8);">
+        <div class="dash-timeline-item" style="padding: 8px 16px;">
+          <i class="ph ph-file-image" style="font-size: 1.5rem;"></i>
+          <div style="flex: 1;"><strong>MT4_Page19_Inks.tiff</strong></div>
+          <div>Page 19</div>
+          <div style="opacity:0.7;">Oct 24</div>
+          <span class="status-badge flatting" style="font-size:0.7rem;">Processing</span>
+        </div>
+      </div>
+
+      <h3 class="dash-section-title">Page Tracker</h3>
+      <div class="dash-page-grid">
+        
+        <!-- Page Card 1 -->
+        <div class="dash-page-card status-approved" onclick="openModal('Page 1', 'assets/images/midnight-terrors.jpg', 'Approved', 'Beautiful establishing shot. No changes needed.')">
+          <img src="assets/images/midnight-terrors.jpg" alt="Thumb" class="dash-page-thumb">
+          <div class="dash-page-info">
+            <div style="font-weight:bold; font-size: 1.2rem;">Page 1</div>
+            <span class="status-badge approved" style="margin-top: 4px; font-size: 0.7rem;">Approved</span>
+          </div>
+        </div>
+
+        <!-- Page Card 2 -->
+        <div class="dash-page-card status-review" onclick="openModal('Page 2', 'assets/images/midnight-terrors.jpg', 'Review', 'Added more green to the shadows here to heighten the tension as requested.')">
+          <img src="assets/images/midnight-terrors.jpg" alt="Thumb" class="dash-page-thumb" style="filter: hue-rotate(90deg);">
+          <div class="dash-page-info">
+            <div style="font-weight:bold; font-size: 1.2rem;">Page 2</div>
+            <span class="status-badge review" style="margin-top: 4px; font-size: 0.7rem;">Review</span>
+          </div>
+        </div>
+
+        <!-- Page Card 3 -->
+        <div class="dash-page-card" style="border-top: 6px solid var(--color-accent);" onclick="openModal('Page 3', 'assets/images/midnight-terrors.jpg', 'Coloring', 'Currently rendering the backgrounds.')">
+          <div class="dash-page-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2rem;color:#888;background:#333;"><i class="ph ph-image"></i></div>
+          <div class="dash-page-info">
+            <div style="font-weight:bold; font-size: 1.2rem;">Page 3</div>
+            <span class="status-badge coloring" style="margin-top: 4px; font-size: 0.7rem;">Coloring</span>
+          </div>
+        </div>
+
+        <!-- Page Card 4 -->
+        <div class="dash-page-card" style="border-top: 6px solid var(--color-secondary);">
+          <div class="dash-page-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2rem;color:#888;background:#222;"><i class="ph ph-image"></i></div>
+          <div class="dash-page-info">
+            <div style="font-weight:bold; font-size: 1.2rem;">Page 4</div>
+            <span class="status-badge flatting" style="margin-top: 4px; font-size: 0.7rem;">Flatting</span>
+          </div>
+        </div>
+
+        <!-- Page Card 5 -->
+        <div class="dash-page-card" style="border-top: 6px solid #888;">
+          <div class="dash-page-thumb" style="display:flex;align-items:center;justify-content:center;font-size:2rem;color:#888;background:#111;"><i class="ph ph-image"></i></div>
+          <div class="dash-page-info">
+            <div style="font-weight:bold; font-size: 1.2rem; opacity: 0.5;">Page 5</div>
+            <span class="status-badge" style="margin-top: 4px; font-size: 0.7rem; background:#888;">Not Started</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div class="dash-modal" id="pageModal">
+    <div class="dash-modal-content">
+      <button class="icon-btn dash-modal-close" onclick="closeModal()"><i class="ph ph-x"></i></button>
+      <div class="grid-2">
+        <div>
+          <img src="" id="modalImg" alt="Page Preview" style="width:100%; border:var(--border-ink);">
+        </div>
+        <div>
+          <h2 id="modalTitle" style="font-size: 2.5rem; margin-bottom: 8px;">Page 1</h2>
+          <div style="margin-bottom: 16px;" id="modalStatusContainer"></div>
+          
+          <div style="background: var(--color-surface-ink); padding: 16px; border: var(--border-ink); margin-bottom: 24px;">
+            <h4 style="color: var(--color-primary); margin-bottom: 8px;"><i class="ph ph-note-pencil"></i> Colorist Notes</h4>
+            <p id="modalNotes" style="font-size: 1rem; opacity: 0.9;"></p>
+          </div>
+
+          <form id="reviewForm" style="display:flex; flex-direction: column; gap: 16px;">
+            <div class="form-group" style="margin:0;">
+              <label class="form-label">Client Feedback</label>
+              <textarea class="form-control" rows="4" placeholder="Request changes here if needed..."></textarea>
+            </div>
+            <div style="display:flex; gap: 16px;">
+              <button type="button" class="btn btn-secondary" onclick="approvePage()"><i class="ph ph-check"></i> Approve</button>
+              <button type="submit" class="btn"><i class="ph ph-arrow-u-up-left"></i> Request Revision</button>
+            </div>
+            <div class="form-success" id="reviewSuccess" style="display:none; margin:0;">Revision requested!</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

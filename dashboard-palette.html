@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorist - Palette Approvals</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body class="dashboard-layout">
+
+  <!-- Sidebar -->
+  <div class="backdrop dash-backdrop"></div>
+  <aside class="dashboard-sidebar">
+    <div class="dashboard-header">
+      <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 40px; margin: 0 auto;"></a>
+    </div>
+    <nav class="dashboard-nav">
+      <a href="dashboard.html"><i class="ph ph-squares-four"></i> Overview</a>
+      <a href="dashboard-project.html"><i class="ph ph-folder-open"></i> My Projects</a>
+      <a href="dashboard-palette.html" class="active"><i class="ph ph-palette"></i> Palette Approvals</a>
+      <a href="dashboard-downloads.html"><i class="ph ph-download-simple"></i> Downloads</a>
+    </nav>
+    <div class="dashboard-nav-actions">
+      <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+      <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="dashboard-main">
+    <div class="dash-topbar">
+      <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 32px;"></a>
+      <button class="icon-btn dash-menu-toggle" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+    </div>
+
+    <div class="dashboard-content">
+      
+      <div style="margin-bottom: var(--spacing-6);">
+        <h2 class="dash-issue-header" style="font-size: 3rem;">PALETTE APPROVALS</h2>
+        <p style="font-size: 1.2rem; opacity: 0.8;">Review and approve color palettes before full coloring begins.</p>
+      </div>
+
+      <div class="dash-tabs">
+        <button class="dash-tab active">All</button>
+        <button class="dash-tab">Pending</button>
+        <button class="dash-tab">Approved</button>
+      </div>
+
+      <!-- Palette Card 1 (Pending) -->
+      <div class="palette-card status-pending" id="palette-1">
+        <div class="palette-header">
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem;">Viktor — Midnight Terrors #4</h3>
+          <span class="status-badge review" id="badge-1">Pending</span>
+        </div>
+        <div class="palette-body">
+          <div>
+            <div class="swatches">
+              <div class="swatch-item">
+                <div class="swatch-circle" style="background: #E8C1A0;"></div>
+                <div style="font-size: 0.8rem; font-family: monospace;">Skin</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch-circle" style="background: #2C3E50;"></div>
+                <div style="font-size: 0.8rem; font-family: monospace;">Shadows</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch-circle" style="background: #E74C3C;"></div>
+                <div style="font-size: 0.8rem; font-family: monospace;">Accent</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch-circle" style="background: #1A1A1A;"></div>
+                <div style="font-size: 0.8rem; font-family: monospace;">Costume</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch-circle" style="background: #F1C40F;"></div>
+                <div style="font-size: 0.8rem; font-family: monospace;">Magic</div>
+              </div>
+            </div>
+            <div style="opacity: 0.9;">
+              <strong>Colorist Notes:</strong>
+              <p>Deep blue shadows to emphasize dread; crimson accent for violence beats. The magic aura is kept warm to contrast with the cold shadows.</p>
+            </div>
+          </div>
+          <div>
+            <img src="assets/images/midnight-terrors.jpg" alt="Reference" style="width:100%; border: var(--border-ink);">
+          </div>
+        </div>
+        <div class="palette-actions">
+          <button class="btn btn-secondary" onclick="approvePalette(1)"><i class="ph ph-check"></i> Approve Palette</button>
+          <button class="btn" onclick="toggleRevision(1)"><i class="ph ph-arrow-u-up-left"></i> Request Revision</button>
+        </div>
+        <div class="revision-box" id="rev-box-1">
+          <form onsubmit="submitRevision(event, 1)" style="display:flex; flex-direction:column; gap:16px;">
+            <textarea class="form-control" rows="3" placeholder="What needs to be changed?"></textarea>
+            <button type="submit" class="btn" style="align-self: flex-start;">Send Request</button>
+            <div class="form-success" id="rev-success-1" style="display:none; margin:0;">Revision requested!</div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Palette Card 2 (Approved) -->
+      <div class="palette-card status-approved" id="palette-2">
+        <div class="palette-header">
+          <h3 style="font-family: var(--font-heading); font-size: 1.8rem;">Cyber-City Environment — Neon Drifters</h3>
+          <span class="status-badge approved">Approved</span>
+        </div>
+        <div class="palette-body">
+          <div>
+            <div class="swatches">
+              <div class="swatch-item">
+                <div class="swatch-circle" style="background: #0B0F19;"></div>
+                <div style="font-size: 0.8rem; font-family: monospace;">Sky/Void</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch-circle" style="background: #00F0FF;"></div>
+                <div style="font-size: 0.8rem; font-family: monospace;">Neon Cyan</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch-circle" style="background: #FF0055;"></div>
+                <div style="font-size: 0.8rem; font-family: monospace;">Neon Pink</div>
+              </div>
+              <div class="swatch-item">
+                <div class="swatch-circle" style="background: #2E1A47;"></div>
+                <div style="font-size: 0.8rem; font-family: monospace;">Midtones</div>
+              </div>
+            </div>
+            <div style="opacity: 0.9;">
+              <strong>Colorist Notes:</strong>
+              <p>Classic cyberpunk vaporwave split. Heavy reliance on glowing effects for the signage over dark purple midtones.</p>
+            </div>
+          </div>
+          <div>
+            <img src="assets/images/neon-drifters.jpg" alt="Reference" style="width:100%; border: var(--border-ink);">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

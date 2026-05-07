@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorist - Coming Soon</title>
+  <meta name="description" content="Something colorful is coming soon.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    .countdown-container {
+      display: flex;
+      gap: var(--spacing-2);
+      justify-content: center;
+      margin: var(--spacing-6) 0;
+      flex-wrap: wrap;
+    }
+    .countdown-panel {
+      background: var(--color-surface);
+      border: var(--border-ink);
+      box-shadow: var(--shadow-comic);
+      width: 100px;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .cd-num {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      color: var(--color-primary);
+      line-height: 1;
+    }
+    .cd-label {
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh; background: var(--color-bg);">
+  
+  <header class="navbar" style="position: absolute; border: none; background: transparent; backdrop-filter: none;">
+    <div class="navbar-container" style="justify-content: center;">
+      <span class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 48px;"></span>
+    </div>
+  </header>
+
+  <main style="flex: 1; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2; margin: 0; padding: var(--spacing-4);">
+    <div class="texture-halftone"></div>
+    
+    <div class="animate-panel-reveal" style="text-align: center; max-width: 600px; background: var(--color-bg); padding: var(--spacing-6); border: var(--border-ink); box-shadow: 10px 10px 0px var(--color-primary);">
+      
+      <div style="background: var(--color-ink); color: var(--color-bg); display: inline-block; padding: 4px 16px; font-weight: bold; transform: rotate(-2deg); margin-bottom: var(--spacing-4);">ISSUE #1 DROPPING SOON</div>
+      
+      <h1 style="font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: var(--spacing-2);">SOMETHING COLORFUL IS COMING...</h1>
+      <p style="font-size: 1.2rem; opacity: 0.8;">The ink is dry, but the colors are still rendering. Sign up below to get notified when the new portfolio goes live.</p>
+      
+      <div class="countdown-container">
+        <div class="countdown-panel">
+          <span class="cd-num" id="cd-days">14</span>
+          <span class="cd-label">Days</span>
+        </div>
+        <div class="countdown-panel">
+          <span class="cd-num" id="cd-hours">08</span>
+          <span class="cd-label">Hours</span>
+        </div>
+        <div class="countdown-panel">
+          <span class="cd-num" id="cd-mins">45</span>
+          <span class="cd-label">Mins</span>
+        </div>
+        <div class="countdown-panel">
+          <span class="cd-num" id="cd-secs">32</span>
+          <span class="cd-label">Secs</span>
+        </div>
+      </div>
+
+      <!-- Mailchimp Placeholder -->
+      <form class="validate-form" style="display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;" novalidate>
+        <input type="email" class="form-control" style="flex: 1; min-width: 200px; margin: 0;" placeholder="Enter your email address" required>
+        <button type="submit" class="btn" style="white-space: nowrap;">Notify Me</button>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    // Theme setup
+    const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (currentTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+    const currentDir = localStorage.getItem('dir') || 'ltr';
+    if (currentDir === 'rtl') {
+      document.documentElement.setAttribute('dir', 'rtl');
+    }
+
+    // Dummy Countdown
+    setInterval(() => {
+      const s = document.getElementById('cd-secs');
+      let val = parseInt(s.innerText);
+      if(val > 0) {
+        val--;
+        s.innerText = val < 10 ? '0' + val : val;
+      } else {
+        s.innerText = '59';
+        // would cascade to mins normally
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
