@@ -17,6 +17,16 @@
       .btn { width: 100%; text-align: center; }
       .hero-title { font-size: 2.5rem; word-wrap: break-word; }
     }
+
+    .status-socials a {
+      transition: transform 0.2s, color 0.2s;
+      display: inline-block;
+    }
+
+    .status-socials a:hover {
+      color: var(--color-primary) !important;
+      transform: scale(1.2);
+    }
   </style>
 </head>
 <body>
@@ -119,21 +129,31 @@
 
         <!-- Contact Info & Map -->
         <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
-          <div class="comic-card" style="background: var(--color-ink); color: var(--color-bg);">
+          <div class="comic-card" style="background: var(--color-ink); color: var(--color-bg); text-align: center;">
             <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: var(--spacing-2); color: var(--color-primary);">Status</h3>
             <p style="font-size: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
               <i class="ph ph-check-circle" style="color: #00e676;"></i> Currently accepting new clients
             </p>
             <p style="margin-top: var(--spacing-2);">Email directly: <br><strong>hello@colorist.com</strong></p>
+            <p style="margin-top: var(--spacing-2);">Phone Number: <br><strong>+1 (212) 555-COLOR</strong></p>
+            <div class="status-socials" style="display: flex; gap: 20px; justify-content: center; margin-top: var(--spacing-4);">
+              <a href="#" style="color: var(--color-bg);" aria-label="Instagram"><i class="ph ph-instagram-logo" style="font-size: 1.8rem;"></i></a>
+              <a href="#" style="color: var(--color-bg);" aria-label="Twitter"><i class="ph ph-twitter-logo" style="font-size: 1.8rem;"></i></a>
+              <a href="#" style="color: var(--color-bg);" aria-label="Behance"><i class="ph ph-behance-logo" style="font-size: 1.8rem;"></i></a>
+            </div>
           </div>
 
-          <!-- Map Placeholder -->
+          <!-- Map -->
           <div class="comic-card" style="padding: 0; overflow: hidden; height: 250px;">
-            <div style="width: 100%; height: 100%; background: #e0e0e0 url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=800') center/cover; position: relative;">
-              <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center;">
-                <span style="background: var(--color-primary); color: #fff; padding: 4px 12px; font-weight: bold; border: 2px solid #000; box-shadow: 4px 4px 0px #000;">New York Studio</span>
-              </div>
-            </div>
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1715091234567!5m2!1sen!2sus" 
+              width="100%" 
+              height="100%" 
+              style="border:0; filter: grayscale(0.2) contrast(1.1);" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
         </div>
       </div>

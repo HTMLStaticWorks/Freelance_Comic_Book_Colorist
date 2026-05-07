@@ -881,6 +881,7 @@ main {
 .dashboard-main {
   flex: 1;
   margin-left: 260px;
+  margin-top: 0;
   min-height: 100vh;
   background: var(--color-bg);
 }
@@ -950,7 +951,7 @@ main {
 
 .dash-topbar {
   display: none;
-  padding: var(--spacing-4);
+  padding: 12px var(--spacing-4);
   background: var(--color-bg);
   border-bottom: var(--border-ink);
   align-items: center;
@@ -1041,16 +1042,42 @@ main {
 }
 
 .dash-table-wrapper {
-  overflow-x: auto;
+  overflow-x: scroll; /* Force scrollbar visibility */
   border: var(--border-ink);
   box-shadow: var(--shadow-comic);
   background: var(--color-surface);
+  margin-bottom: var(--spacing-4);
+  /* Custom Scrollbar Styling */
+  scrollbar-width: auto;
+  scrollbar-color: var(--color-primary) var(--color-surface-ink);
+}
+
+.dash-table-wrapper::-webkit-scrollbar {
+  height: 12px; /* Slightly taller for better visibility */
+  display: block;
+}
+
+.dash-table-wrapper::-webkit-scrollbar-track {
+  background: var(--color-surface-ink);
+  border-top: 2px solid var(--color-ink);
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
+
+.dash-table-wrapper::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border: 2px solid var(--color-ink);
+  border-radius: 0;
+  box-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+}
+
+.dash-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
 }
 
 .dash-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 700px;
+  min-width: 850px; /* Increased to ensure overflow on most tablets/laptops */
 }
 
 .dash-table th {
@@ -1432,6 +1459,9 @@ button:disabled {
 
   .dashboard-main {
     margin-left: 0;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 
   [dir="rtl"] .dashboard-main {
@@ -1440,6 +1470,15 @@ button:disabled {
 
   .dash-topbar {
     display: flex;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .dashboard-content {
+    padding: var(--spacing-4);
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
   }
 }
 
@@ -1452,6 +1491,54 @@ button:disabled {
 @media (max-width: 480px) {
   .dash-kpi-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Specific overrides for 360px mobile view dashboard */
+@media (max-width: 360px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  body.dashboard-layout, 
+  .dashboard-main {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .dash-topbar {
+    padding: 10px 16px;
+  }
+
+  .dashboard-content {
+    padding: 16px;
+  }
+
+  .dash-welcome {
+    padding: 16px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .dash-welcome h2 {
+    font-size: 1.8rem;
+    word-wrap: break-word;
+  }
+
+  .dash-kpi-grid {
+    gap: 16px;
+  }
+
+  .dash-kpi-card {
+    padding: 16px;
+    width: 100%;
+  }
+
+  .dash-section-title {
+    font-size: 1.5rem;
+    margin-top: var(--spacing-6);
   }
 }
 
