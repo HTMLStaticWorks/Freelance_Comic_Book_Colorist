@@ -75,6 +75,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // Navbar Scroll
+  const navbar = document.querySelector('.navbar');
+  const handleScroll = () => {
+    if (navbar) {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    }
+  };
+  window.addEventListener('scroll', handleScroll);
+  handleScroll(); // Initial check
+
   // Form Validation
   const forms = document.querySelectorAll('.validate-form');
   forms.forEach(form => {
