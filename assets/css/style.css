@@ -380,6 +380,77 @@ main {
   min-height: calc(100vh - 80px - 300px);
 }
 
+/* Hero Split (home2) */
+.hero-split {
+  display: flex;
+  flex-direction: row;
+  min-height: 90vh;
+  border-bottom: var(--border-ink);
+}
+
+.hero-split-img {
+  flex: 1;
+  background-image: url('../images/hero-split.jpg');
+  background-size: cover;
+  background-position: center;
+  border-right: var(--border-ink);
+  min-height: 400px;
+}
+
+.hero-split-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-10);
+  background: var(--color-surface);
+  position: relative;
+}
+
+/* 768px and below: stack vertically — text first, image second */
+@media (max-width: 768px) {
+  .hero-split {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .hero-split-text {
+    order: 1;
+    padding: var(--spacing-6) var(--spacing-4);
+    min-height: 60vh;
+  }
+
+  .hero-split-img {
+    order: 2;
+    flex: none;
+    width: 100%;
+    min-height: 300px;
+    border-right: none;
+    border-top: var(--border-ink);
+  }
+}
+
+/* 1024px only: wider image, compact text pane */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-split {
+    min-height: 70vh;
+  }
+
+  .hero-split-img {
+    flex: 2;  /* image takes 2/3 of width */
+  }
+
+  .hero-split-text {
+    flex: 1;  /* text takes 1/3 of width */
+    padding: var(--spacing-6) var(--spacing-4);
+  }
+
+  .hero-split-text .hero-title {
+    font-size: 3.5rem !important;
+  }
+}
+
 /* Footer */
 .site-footer {
   background: var(--color-ink);
@@ -456,8 +527,20 @@ main {
 
 @media (max-width: 768px) {
   .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  /* Center flex rows (social icons & phone) inside the Connect column */
+  .footer-col > div,
+  .footer-col > p {
+    justify-content: center;
   }
 }
 
@@ -1208,7 +1291,7 @@ main {
 
 .dash-page-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-4);
 }
 
@@ -1701,4 +1784,14 @@ button:disabled {
 
 .auth-terms input[type="checkbox"] {
   margin-top: 4px;
+}
+
+@media (max-width: 360px) {
+  .auth-card {
+    padding: var(--spacing-4);
+  }
+  .auth-title h2 {
+    font-size: 1.2rem !important;
+    padding: var(--spacing-1) var(--spacing-2);
+  }
 }

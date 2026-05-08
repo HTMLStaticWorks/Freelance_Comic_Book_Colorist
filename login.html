@@ -32,11 +32,11 @@
 
   <div class="auth-card">
     <div class="auth-logo">
-      <img src="assets/images/logo.svg" alt="Colorist Logo">
+      <a href="index.html"><img src="assets/images/logo.svg" alt="Colorist Logo"></a>
     </div>
 
     <div class="auth-title">
-      <h2>ACCESS YOUR PANEL</h2>
+      <h2 style="font-size: 1.5rem;">ACCESS YOUR PANEL</h2>
     </div>
 
     <form class="auth-form" id="loginForm">
@@ -50,7 +50,13 @@
 
       <div class="form-group">
         <label class="form-label" for="password">Password</label>
-        <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+        <div style="position: relative;">
+          <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+          <button type="button" id="togglePassword"
+            style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--color-ink); font-size: 1.2rem;">
+            <i class="ph ph-eye"></i>
+          </button>
+        </div>
         <div class="form-error-msg" id="passwordError">Password must be at least 8 characters</div>
       </div>
 
@@ -68,10 +74,10 @@
     <div class="auth-divider">OR CONTINUE WITH</div>
 
     <button class="btn btn-google btn-google">
-      <i class="ph ph-google-logo" style="margin-right: 8px;"></i> Continue with Google
+      <i class="ph ph-google-logo" style="margin-right: 8px;"></i> Google
     </button>
     <button class="btn btn-email-auth">
-      <i class="ph ph-envelope" style="margin-right: 8px;"></i> Continue with Email
+      <i class="ph ph-apple-logo" style="margin-right: 8px;"></i> Apple
     </button>
 
     <div class="auth-footer-link">
@@ -129,6 +135,18 @@
         setTimeout(() => {
           window.location.href = 'dashboard.html';
         }, 1500);
+      }
+
+    // Password toggle
+    document.getElementById('togglePassword').addEventListener('click', function() {
+      const passInput = document.getElementById('password');
+      const icon = this.querySelector('i');
+      if (passInput.type === 'password') {
+        passInput.type = 'text';
+        icon.classList.replace('ph-eye', 'ph-eye-slash');
+      } else {
+        passInput.type = 'password';
+        icon.classList.replace('ph-eye-slash', 'ph-eye');
       }
     });
   </script>
