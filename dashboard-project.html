@@ -26,21 +26,24 @@
       <a href="dashboard-palette.html"><i class="ph ph-palette"></i> Palette Approvals</a>
       <a href="dashboard-downloads.html"><i class="ph ph-download-simple"></i> Downloads</a>
     </nav>
-    <div class="dashboard-nav-actions" style="flex-direction: column; gap: 12px;">
+    <div class="dashboard-nav-actions">
       <a href="index.html" class="btn btn-secondary" style="font-size: 1.1rem; width: 100%;">Logout</a>
-      <div style="display: flex; gap: 16px; justify-content: center; width: 100%;">
-        <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
-        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
-      </div>
     </div>
   </aside>
 
   <!-- Main Content -->
   <main class="dashboard-main">
     <div class="dash-topbar">
-      <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo"
+      <a href="index.html" class="nav-logo dash-top-logo"><img src="assets/images/logo.svg" alt="Colorist Logo"
           style="height: 32px;"></a>
-      <button class="icon-btn dash-menu-toggle" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+      <div class="topbar-actions">
+        <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+        <a href="#" class="profile-link" aria-label="Profile Account">
+          <i class="ph ph-user-circle"></i>
+        </a>
+        <button class="icon-btn dash-menu-toggle" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+      </div>
     </div>
 
     <div class="dashboard-content">
@@ -48,7 +51,7 @@
       <!-- Project Header -->
       <div style="margin-bottom: var(--spacing-6);">
         <span class="status-badge flatting" style="margin-bottom: 8px;">Horror</span>
-        <h2 class="dash-issue-header">MIDNIGHT TERRORS #4</h2>
+        <h3 class="dash-issue-header" style="font-size: 2rem;">MIDNIGHT TERRORS #4</h3>
         <div style="display: flex; gap: 24px; font-size: 1.2rem; opacity: 0.8; flex-wrap: wrap;">
           <span><strong>Client:</strong> Invincible Comics</span>
           <span><strong>Total Pages:</strong> 24</span>

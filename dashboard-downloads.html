@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +10,15 @@
   <link rel="stylesheet" href="assets/css/rtl.css">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
+
 <body class="dashboard-layout">
 
   <!-- Sidebar -->
   <div class="backdrop dash-backdrop"></div>
   <aside class="dashboard-sidebar">
     <div class="dashboard-header">
-      <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 40px; margin: 0 auto;"></a>
+      <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo"
+          style="height: 40px; margin: 0 auto;"></a>
     </div>
     <nav class="dashboard-nav">
       <a href="dashboard.html"><i class="ph ph-squares-four"></i> Overview</a>
@@ -23,26 +26,30 @@
       <a href="dashboard-palette.html"><i class="ph ph-palette"></i> Palette Approvals</a>
       <a href="dashboard-downloads.html" class="active"><i class="ph ph-download-simple"></i> Downloads</a>
     </nav>
-    <div class="dashboard-nav-actions" style="flex-direction: column; gap: 12px;">
+    <div class="dashboard-nav-actions">
       <a href="index.html" class="btn btn-secondary" style="font-size: 1.1rem; width: 100%;">Logout</a>
-      <div style="display: flex; gap: 16px; justify-content: center; width: 100%;">
-        <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
-        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
-      </div>
     </div>
   </aside>
 
   <!-- Main Content -->
   <main class="dashboard-main">
     <div class="dash-topbar">
-      <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 32px;"></a>
-      <button class="icon-btn dash-menu-toggle" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+      <a href="index.html" class="nav-logo dash-top-logo"><img src="assets/images/logo.svg" alt="Colorist Logo"
+          style="height: 32px;"></a>
+      <div class="topbar-actions">
+        <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
+        <button class="icon-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+        <a href="#" class="profile-link" aria-label="Profile Account">
+          <i class="ph ph-user-circle"></i>
+        </a>
+        <button class="icon-btn dash-menu-toggle" aria-label="Open Menu"><i class="ph ph-list"></i></button>
+      </div>
     </div>
 
     <div class="dashboard-content">
-      
+
       <div style="margin-bottom: var(--spacing-6);">
-        <h2 class="dash-issue-header" style="font-size: 3rem;">PRINT-READY DOWNLOADS</h2>
+        <h2 class="dash-issue-header" style="font-size: 2rem;">PRINT-READY DOWNLOADS</h2>
         <p style="font-size: 1.2rem; opacity: 0.8;">Only fully approved issues are available for download.</p>
       </div>
 
@@ -65,7 +72,8 @@
               <td>CMYK / 300 DPI</td>
               <td>142 MB</td>
               <td><span class="status-badge ready">Ready</span></td>
-              <td><button class="btn btn-secondary" style="font-size:1rem; padding: 4px 12px;"><i class="ph ph-download-simple"></i> DL</button></td>
+              <td><button class="btn btn-secondary" style="font-size:1rem; padding: 4px 12px;"><i
+                    class="ph ph-download-simple"></i> DL</button></td>
             </tr>
             <tr>
               <td><strong>Neon Drifters #12</strong></td>
@@ -73,7 +81,8 @@
               <td>TIFF / 300 DPI</td>
               <td>850 MB</td>
               <td><span class="status-badge ready">Ready</span></td>
-              <td><button class="btn btn-secondary" style="font-size:1rem; padding: 4px 12px;"><i class="ph ph-download-simple"></i> DL</button></td>
+              <td><button class="btn btn-secondary" style="font-size:1rem; padding: 4px 12px;"><i
+                    class="ph ph-download-simple"></i> DL</button></td>
             </tr>
             <tr>
               <td><strong>Midnight Terrors #4</strong></td>
@@ -81,7 +90,8 @@
               <td>CMYK / 300 DPI</td>
               <td>--</td>
               <td><span class="status-badge review">In Progress</span></td>
-              <td><button class="btn btn-secondary" style="font-size:1rem; padding: 4px 12px;" disabled><i class="ph ph-download-simple"></i> DL</button></td>
+              <td><button class="btn btn-secondary" style="font-size:1rem; padding: 4px 12px;" disabled><i
+                    class="ph ph-download-simple"></i> DL</button></td>
             </tr>
             <tr>
               <td><strong>Captain Galaxy</strong></td>
@@ -89,7 +99,8 @@
               <td>RGB / Web</td>
               <td>--</td>
               <td><span class="status-badge" style="background:#888;">Not Started</span></td>
-              <td><button class="btn btn-secondary" style="font-size:1rem; padding: 4px 12px;" disabled><i class="ph ph-download-simple"></i> DL</button></td>
+              <td><button class="btn btn-secondary" style="font-size:1rem; padding: 4px 12px;" disabled><i
+                    class="ph ph-download-simple"></i> DL</button></td>
             </tr>
           </tbody>
         </table>
@@ -99,7 +110,8 @@
 
         <div class="palette-card" style="margin-top: var(--spacing-6);">
           <div class="palette-header" style="background: var(--color-ink); color: var(--color-bg);">
-            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin:0;"><i class="ph ph-info"></i> File Format Info</h3>
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin:0;"><i class="ph ph-info"></i> File
+              Format Info</h3>
           </div>
           <div class="palette-body" style="grid-template-columns: 1fr; padding: 16px;">
             <ul style="padding-left: 20px; line-height: 1.8;">
@@ -112,7 +124,8 @@
 
         <div class="palette-card" style="margin-top: var(--spacing-6);">
           <div class="palette-header">
-            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin:0;"><i class="ph ph-export"></i> Request Additional Exports</h3>
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin:0;"><i class="ph ph-export"></i>
+              Request Additional Exports</h3>
           </div>
           <div class="palette-body" style="grid-template-columns: 1fr; padding: 16px;">
             <form id="exportForm" onsubmit="submitExport(event)">
@@ -138,7 +151,8 @@
                 <textarea class="form-control" rows="3" placeholder="Any specific dimensions or notes?"></textarea>
               </div>
               <button type="submit" class="btn">Request Export</button>
-              <div class="form-success" id="exportSuccess" style="margin-top: 16px;">Export requested successfully!</div>
+              <div class="form-success" id="exportSuccess" style="margin-top: 16px;">Export requested successfully!
+              </div>
             </form>
           </div>
         </div>
@@ -150,4 +164,5 @@
 
   <script src="assets/js/dashboard.js"></script>
 </body>
+
 </html>
