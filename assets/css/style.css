@@ -487,6 +487,10 @@ main {
   font-size: 1.5rem;
 }
 
+.footer-col h4:not(.nav-logo) {
+  margin-top: 6px;
+}
+
 .footer-col ul {
   list-style: none;
 }
@@ -690,6 +694,10 @@ main {
   font-size: 1rem;
   box-shadow: 4px 4px 0px var(--color-surface-ink);
   transition: border-color 0.3s;
+}
+
+.form-group div[style*="position: relative"] .form-control {
+  padding-right: 40px;
 }
 
 .form-control:focus {

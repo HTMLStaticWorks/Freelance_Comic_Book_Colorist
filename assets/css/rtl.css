@@ -31,3 +31,45 @@ html[dir="rtl"] .nav-logo {
 html[dir="rtl"] .auth-row {
   flex-direction: row-reverse;
 }
+
+/* RTL — Password toggle button alignment and input padding */
+html[dir="rtl"] #togglePassword,
+html[dir="rtl"] .togglePassword {
+  right: auto !important;
+  left: 12px !important;
+}
+
+html[dir="rtl"] .form-group div[style*="position: relative"] .form-control {
+  padding-right: var(--spacing-2) !important;
+  padding-left: 40px !important;
+}
+
+/* RTL — Footer Alignment Fixes */
+html[dir="rtl"] .footer-col {
+  align-items: flex-start;
+}
+
+html[dir="rtl"] .footer-col h4 {
+  text-align: right;
+}
+
+html[dir="rtl"] .footer-col p {
+  direction: ltr;
+  text-align: right;
+  justify-content: flex-end;
+}
+
+html[dir="rtl"] .footer-col div[style*="display: flex"] {
+  direction: ltr !important;
+  justify-content: flex-end !important;
+}
+
+html[dir="rtl"] .footer-col ul {
+  direction: ltr;
+  text-align: right;
+}
+
+html[dir="rtl"] .footer-col .nav-logo {
+  display: flex;
+  justify-content: flex-end;
+}

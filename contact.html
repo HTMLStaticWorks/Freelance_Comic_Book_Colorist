@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,11 +13,32 @@
   <style>
     /* Specific overrides for 360px mobile view to ensure no overflow */
     @media (max-width: 360px) {
-      body, html { overflow-x: hidden; }
-      .container { padding-left: 16px; padding-right: 16px; width: 100%; box-sizing: border-box; }
-      .comic-card { padding: 16px; }
-      .btn { width: 100%; text-align: center; }
-      .hero-title { font-size: 2.5rem; word-wrap: break-word; }
+
+      body,
+      html {
+        overflow-x: hidden;
+      }
+
+      .container {
+        padding-left: 16px;
+        padding-right: 16px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .comic-card {
+        padding: 16px;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+        word-wrap: break-word;
+      }
     }
 
     .status-socials a {
@@ -30,10 +52,12 @@
     }
   </style>
 </head>
+
 <body>
   <header class="navbar">
     <div class="navbar-container">
-      <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 40px;"></a>
+      <a href="index.html" class="nav-logo"><img src="assets/images/logo.svg" alt="Colorist Logo"
+          style="height: 40px;"></a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="home2.html">Home 2</a>
@@ -41,15 +65,14 @@
         <a href="services.html">Services</a>
         <a href="style-guide.html">Style Guide</a>
         <a href="blog.html">Blog</a>
-              <a href="contact.html" class="active">Contact</a>
-      <a href="dashboard.html">Dashboard</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="dashboard.html">Dashboard</a>
       </nav>
       <div class="nav-actions nav-actions-desktop">
         <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
         <button class="icon-btn rtl-toggle" aria-label="Toggle RTL">
           <i class="ph ph-arrows-left-right"></i>
         </button>
-        <a href="login.html" class="btn" style="padding: 8px 16px; font-size: 1.1rem; margin-left: 8px;">Login</a>
       </div>
       <button class="icon-btn menu-toggle" aria-label="Open Menu"><i class="ph ph-list"></i></button>
     </div>
@@ -68,10 +91,9 @@
       <a href="services.html">Services</a>
       <a href="style-guide.html">Style Guide</a>
       <a href="blog.html">Blog</a>
-            <a href="contact.html" class="active">Contact</a>
+      <a href="contact.html" class="active">Contact</a>
       <a href="dashboard.html">Dashboard</a>
       <hr style="border: none; border-top: 2px solid var(--color-surface-ink); margin: 8px 0;">
-      <a href="login.html" class="btn" style="width: 100%; margin-top: 8px;">Login</a>
     </nav>
     <div class="drawer-actions">
       <button class="icon-btn theme-toggle" aria-label="Toggle Theme"><i class="ph ph-moon"></i></button>
@@ -89,11 +111,12 @@
       <div class="grid-2 mt-8">
         <!-- Contact Form -->
         <div class="comic-card" style="align-items: stretch; text-align: left;">
-          <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: var(--spacing-4);">Project Inquiry</h3>
-          
+          <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: var(--spacing-4);">Project
+            Inquiry</h3>
+
           <form class="validate-form" action="https://formspree.io/f/placeholder" method="POST" novalidate>
             <div class="form-success">Message sent successfully! I will reply within 48 hours.</div>
-            
+
             <div class="form-group">
               <label class="form-label" for="name">Your Name *</label>
               <input type="text" id="name" name="name" class="form-control" required placeholder="Jack Kirby">
@@ -120,7 +143,8 @@
 
             <div class="form-group">
               <label class="form-label" for="message">Message * (Min 20 chars)</label>
-              <textarea id="message" name="message" class="form-control" required rows="5" placeholder="Tell me about your comic..."></textarea>
+              <textarea id="message" name="message" class="form-control" required rows="5"
+                placeholder="Tell me about your comic..."></textarea>
               <span class="form-error-msg">Message must be at least 20 characters long.</span>
             </div>
 
@@ -131,29 +155,31 @@
         <!-- Contact Info & Map -->
         <div style="display: flex; flex-direction: column; gap: var(--spacing-4);">
           <div class="comic-card" style="background: var(--color-ink); color: var(--color-bg); text-align: center;">
-            <h3 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: var(--spacing-2); color: var(--color-primary);">Status</h3>
+            <h3
+              style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: var(--spacing-2); color: var(--color-primary);">
+              Status</h3>
             <p style="font-size: 1.2rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
               <i class="ph ph-check-circle" style="color: #00e676;"></i> Currently accepting new clients
             </p>
             <p style="margin-top: var(--spacing-2);">Email directly: <br><strong>hello@colorist.com</strong></p>
             <p style="margin-top: var(--spacing-2);">Phone Number: <br><strong>+1 (212) 555-COLOR</strong></p>
-            <div class="status-socials" style="display: flex; gap: 20px; justify-content: center; margin-top: var(--spacing-4);">
-              <a href="#" style="color: var(--color-bg);" aria-label="Instagram"><i class="ph ph-instagram-logo" style="font-size: 1.8rem;"></i></a>
-              <a href="#" style="color: var(--color-bg);" aria-label="Twitter"><i class="ph ph-twitter-logo" style="font-size: 1.8rem;"></i></a>
-              <a href="#" style="color: var(--color-bg);" aria-label="Behance"><i class="ph ph-behance-logo" style="font-size: 1.8rem;"></i></a>
+            <div class="status-socials"
+              style="display: flex; gap: 20px; justify-content: center; margin-top: var(--spacing-4);">
+              <a href="#" style="color: var(--color-bg);" aria-label="Instagram"><i class="ph ph-instagram-logo"
+                  style="font-size: 1.8rem;"></i></a>
+              <a href="#" style="color: var(--color-bg);" aria-label="Twitter"><i class="ph ph-twitter-logo"
+                  style="font-size: 1.8rem;"></i></a>
+              <a href="#" style="color: var(--color-bg);" aria-label="Behance"><i class="ph ph-behance-logo"
+                  style="font-size: 1.8rem;"></i></a>
             </div>
           </div>
 
           <!-- Map -->
           <div class="comic-card" style="padding: 0; overflow: hidden; height: 250px;">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1715091234567!5m2!1sen!2sus" 
-              width="100%" 
-              height="100%" 
-              style="border:0; filter: grayscale(0.2) contrast(1.1);" 
-              allowfullscreen="" 
-              loading="lazy" 
-              referrerpolicy="no-referrer-when-downgrade">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1715091234567!5m2!1sen!2sus"
+              width="100%" height="100%" style="border:0; filter: grayscale(0.2) contrast(1.1);" allowfullscreen=""
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>
         </div>
@@ -164,16 +190,28 @@
   <footer class="site-footer">
     <div class="footer-grid">
       <div class="footer-col">
-        <h4 class="nav-logo" style="margin: 0; transform: none;"><img src="assets/images/logo.svg" alt="Colorist Logo" style="height: 40px;"></h4>
-        <p style="opacity: 0.8; margin-top: 8px;">Freelance sequential artist bringing ink to life through vibrant, dynamic colors.</p>
+        <h4 class="nav-logo" style="margin: 0; transform: none;"><img src="assets/images/logo.svg" alt="Colorist Logo"
+            style="height: 40px;"></h4>
+        <p style="opacity: 0.8; margin-top: 8px;">Freelance sequential artist bringing ink to life through vibrant,
+          dynamic colors.</p>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
-        <ul><li><a href="index.html">Home</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="services.html">Services</a></li><li><a href="blog.html">Blog</a></li></ul>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
-        <ul><li><a href="services.html">Full Issue Coloring</a></li><li><a href="services.html">Cover Art</a></li><li><a href="services.html">Character Guides</a></li><li><a href="services.html">Flatting</a></li></ul>
+        <ul>
+          <li><a href="services.html">Full Issue Coloring</a></li>
+          <li><a href="services.html">Cover Art</a></li>
+          <li><a href="services.html">Character Guides</a></li>
+          <li><a href="services.html">Flatting</a></li>
+        </ul>
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
@@ -185,7 +223,7 @@
         <p style="opacity: 0.8; display: flex; align-items: center; gap: 8px;">
           <i class="ph ph-phone"></i> <a href="tel:+12125550000" style="color: inherit;">+1 (212) 555-COLOR</a>
         </p>
-        <p style="opacity: 0.8;">Available for new projects</p>
+        <p style="opacity: 0.8;">Currently taking new commissions</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -194,4 +232,5 @@
   </footer>
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>

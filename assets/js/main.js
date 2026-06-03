@@ -126,4 +126,39 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Before/After Slider
+  const sliders = document.querySelectorAll('.ba-slider');
+  sliders.forEach(slider => {
+    const beforeEl = slider.querySelector('.ba-before');
+    const resizerEl = slider.querySelector('.ba-resizer');
+    if (!beforeEl || !resizerEl) return;
+
+    let active = false;
+
+    const drag = (e) => {
+      if (!active) return;
+      let clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
+      let rect = slider.getBoundingClientRect();
+      let pos = (clientX - rect.left) / rect.width;
+      if (pos < 0) pos = 0;
+      if (pos > 1) pos = 1;
+      let percentage = (pos * 100).toFixed(2) + '%';
+      beforeEl.style.width = percentage;
+      resizerEl.style.left = percentage;
+    };
+
+    const startDrag = (e) => {
+      active = true;
+      drag(e);
+    };
+    const stopDrag = () => active = false;
+
+    slider.addEventListener('mousedown', startDrag);
+    slider.addEventListener('touchstart', startDrag, { passive: true });
+    window.addEventListener('mouseup', stopDrag);
+    window.addEventListener('touchend', stopDrag);
+    window.addEventListener('mousemove', drag);
+    window.addEventListener('touchmove', drag, { passive: true });
+  });
 });
